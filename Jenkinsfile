@@ -5,6 +5,14 @@ pipeline {
         stage('Code Checkout') {
             steps {
                 echo 'Code Checkout..'
+                cleanWs()
+                node {
+                    checkout scm
+                }
+                sh """
+                    pwd
+                    ls -ltr
+                """
             }
         }
         stage('Test') {

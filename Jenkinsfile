@@ -6,9 +6,7 @@ pipeline {
             steps {
                 echo 'Code Checkout..'
                 cleanWs()
-                node {
-                    checkout scm
-                }
+                checkout scm
                 sh """
                     pwd
                     ls -ltr
